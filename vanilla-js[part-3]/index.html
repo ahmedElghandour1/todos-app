@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Todos</title>
+    <style>
+        .custom-control-input:checked~.custom-control-label {
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        #todos {
+            max-width: 700px;
+            max-height: 40vh;
+            overflow-y: auto;
+        }
+        #noTodos {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div style="max-width: 700px;margin-top: 20vh;" class="card mr-auto ml-auto">
+            <h5 class="card-header text-center">Todos</h5>
+            <div class="card-body">
+                <div class="form-group pb-3 border-bottom">
+                    <input 
+                    autofocus 
+                    id="todo_name" 
+                    type="text" 
+                    placeholder="What need to be done?" 
+                    class="form-control">
+                </div>
+                <div class="form-group d-flex mb-0">
+                    <input 
+                    type="text" 
+                    id="search_todos"
+                    placeholder="Search for a todo.." 
+                    class="form-control w-50 mr-2">
+                    <select 
+                    class="form-control w-25" 
+                    id="todo_status">
+                        <option hidden selected>Status</option>
+                        <option value="all">All</option>
+                        <option value="0">Active</option>
+                        <option value="1">Completed</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+        <div class="text-center mt-3" id="loader">
+            Loading ...
+        </div>
+        <div class="text-center mt-3" id="noTodos">
+            No Todos found!
+        </div>
+        <ul 
+        id="todos" 
+        style="max-width: 700px;" 
+        class="list-group mt-3 mr-auto ml-auto">
+        </ul>
+    </div>
+
+
+    <script src="uuid.js"></script>
+    <script src="todos.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
