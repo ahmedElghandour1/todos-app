@@ -69,13 +69,11 @@ function TodosModule () {
             status_checkbox.checked = true
         }
         delete_btn.addEventListener('click', () => {
-            console.log(todo.id)
             this.deleteTodo(todo, this.todos);
             this.saveTodos(this.todos);
             this.renderTodos(this.todos, this.filters);
         });
         status_checkbox.addEventListener('change', (event) => {
-            console.log(event);
             if (event.target.checked) {
                 todo.is_completed = 1
             } else {
@@ -87,7 +85,6 @@ function TodosModule () {
     }
 
     this.renderTodos = function (todos) {
-        console.log(this)
         const todosContainer_domElm = document.querySelector('#todos');
         const filteredTodos = this.handleFilterTodos(this.todos, this.filters);
         todosContainer_domElm.innerHTML = '';

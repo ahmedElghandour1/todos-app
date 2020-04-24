@@ -6,7 +6,6 @@ document.body.onload = () => {
 
     let todo_name = '';
     const todoModule = new TodosModule();
-    console.log(todoModule)
     todoModule.fetchTodos().then((_todos) => {
 
         isLoading_domElm.style.display = 'none';
